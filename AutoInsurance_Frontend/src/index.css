@@ -1,0 +1,143 @@
+:root {
+  font-family: "Aptos", "Segoe UI", sans-serif;
+  color: #17243b;
+  background: #f4f7fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+
+  --ink: #17243b;
+  --muted: #64728a;
+  --line: #dce5f1;
+  --blue: #29436f;
+  --blue-deep: #172f54;
+  --teal: #0a918d;
+  --paper: #fff;
+  --page: #f4f7fc;
+  --soft-blue: #eef3ff;
+  --soft-teal: #eaf8f6;
+  --shadow: 0 18px 48px rgba(27, 47, 89, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(12, 157, 154, 0.32);
+  outline-offset: 3px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  color: #17243b;
+  background: #c7f0eb;
+}
+
+.policy-documents {
+  grid-column: 1 / -1;
+}
+
+.policy-documents-heading,
+.policy-document-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.policy-documents-heading {
+  justify-content: space-between;
+}
+
+.policy-document-email {
+  display: grid;
+  gap: 6px;
+  max-width: 420px;
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.policy-document-email input {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.policy-document-row {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.policy-document-actions {
+  margin-top: 12px;
+}
+
+.policy-document-actions button:disabled,
+.policy-documents-heading button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.policy-document-message,
+.policy-document-error {
+  margin: 12px 0 0;
+  font-weight: 600;
+}
+
+.policy-document-message {
+  color: #176f55;
+}
+
+.policy-document-error {
+  color: #a53131;
+}
+
+@media (max-width: 600px) {
+  .policy-documents-heading {
+    align-items: flex-start;
+  }
+
+  .policy-document-actions > button {
+    flex: 1 1 140px;
+  }
+}

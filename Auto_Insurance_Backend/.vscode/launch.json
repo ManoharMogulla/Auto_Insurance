@@ -1,0 +1,85 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Eureka Server",
+      "request": "launch",
+      "mainClass": "com.insurance.eureka.EurekaServerApplication",
+      "projectName": "eureka-server"
+    },
+    {
+      "type": "java",
+      "name": "API Gateway",
+      "request": "launch",
+      "mainClass": "com.insurance.gateway.ApiGatewayApplication",
+      "projectName": "api-gateway"
+    },
+    {
+      "type": "java",
+      "name": "Authentication Service",
+      "request": "launch",
+      "mainClass": "com.ltm.insurance.authentication.AuthenticationServiceApplication",
+      "projectName": "Authentication-Service"
+    },
+    {
+      "type": "java",
+      "name": "Customer Service",
+      "request": "launch",
+      "mainClass": "com.ltm.insurance.customermicroservices.CustomerMicroservicesApplication",
+      "projectName": "CustomerMicroservices"
+    },
+    {
+      "type": "java",
+      "name": "Claims Service",
+      "request": "launch",
+      "mainClass": "com.ltm.insurance.claimsservice.ClaimsServiceApplication",
+      "projectName": "Claims-Service"
+    },
+    {
+      "type": "java",
+      "name": "Document Service",
+      "request": "launch",
+      "mainClass": "com.ltm.insurance.documentservice.DocumentServiceApplication",
+      "projectName": "Document-Service"
+    },
+    {
+      "type": "java",
+      "name": "Payment Service",
+      "request": "launch",
+      "mainClass": "com.ltm.insurance.paymentservice.PaymentServiceApplication",
+      "projectName": "PaymentService"
+    },
+    {
+      "type": "java",
+      "name": "Policy Service",
+      "request": "launch",
+      "mainClass": "com.ltm.insurance.policyservice.PolicyServiceApplication",
+      "projectName": "Policy-Service"
+    },
+    {
+      "type": "java",
+      "name": "Premium Service",
+      "request": "launch",
+      "mainClass": "com.ltm.insurance.premiumservice.PremiumServiceApplication",
+      "projectName": "Premium-Service"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run All Microservices",
+      "configurations": [
+        "Eureka Server",
+        "API Gateway",
+        "Authentication Service",
+        "Customer Service",
+        "Claims Service",
+        "Document Service",
+        "Payment Service",
+        "Policy Service",
+        "Premium Service"
+      ],
+      "stopAll": true
+    }
+  ]
+}

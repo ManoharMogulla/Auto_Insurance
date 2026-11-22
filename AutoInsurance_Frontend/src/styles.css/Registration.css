@@ -1,0 +1,116 @@
+.registration-page {
+  --ink: #17243b;
+  --muted: #64728a;
+  --line: #d7e1ef;
+  --blue: #29436f;
+  --teal: #0a918d;
+  box-sizing: border-box;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: 40px 24px;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 9% 12%, rgba(66, 105, 226, 0.12), transparent 34%), radial-gradient(ellipse at 92% 84%, rgba(12, 157, 154, 0.12), transparent 30%), #f4f7fc;
+  font-family: "Aptos", "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.registration-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.88fr) minmax(0, 1.12fr);
+  width: min(100%, 1000px);
+  min-height: 650px;
+  overflow: hidden;
+  border: 1px solid rgba(29, 49, 88, 0.09);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(27, 47, 89, 0.12);
+  animation: registration-arrive 450ms ease-out both;
+}
+
+.registration-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 44px 40px 36px;
+  color: #f7f9ff;
+  background: radial-gradient(circle at 88% 82%, rgba(90, 211, 199, 0.15) 0 1px, transparent 2px) 0 0 / 19px 19px, radial-gradient(ellipse at 10% 100%, rgba(19, 170, 167, 0.34), transparent 42%), linear-gradient(148deg, #29436f 0%, #1b355e 68%, #142a4c 100%);
+}
+
+.registration-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.registration-brand > span:first-child {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 9px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.registration-brand-copy { display: grid; line-height: 1.15; }
+.registration-brand-copy small { margin-top: 4px; color: rgba(240, 248, 255, 0.72); font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+.registration-kicker, .registration-label { margin: 0; font-size: 10px; font-weight: 750; letter-spacing: 1.25px; }
+.registration-kicker { margin-top: 92px; color: #82e0d2; }
+.registration-aside h1 { max-width: 330px; margin: 15px 0 18px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: 42px; font-weight: 400; line-height: 1.1; }
+.registration-intro { max-width: 300px; margin: 0; color: rgba(247, 249, 255, 0.78); font-size: 14px; }
+.registration-trust { display: flex; align-items: center; gap: 10px; margin: 40px 0 0; color: rgba(247, 249, 255, 0.86); font-size: 12px; }
+.registration-trust span { width: 8px; height: 8px; border-radius: 50%; background: #72dfd1; box-shadow: 0 0 0 4px rgba(114, 223, 209, 0.16); }
+.registration-content { align-self: center; width: 100%; max-width: 570px; margin: 0 auto; padding: 52px 58px; }
+.registration-label { margin-bottom: 8px; color: #0b8d90; }
+.registration-heading h2 { margin: 0; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 400; line-height: 1.2; }
+.registration-heading > p:last-child { margin: 9px 0 0; color: var(--muted); font-size: 14px; }
+.registration-message { margin-top: 20px; padding: 11px 13px; border: 1px solid #f0c4c6; border-radius: 6px; color: #8f343c; background: #fff4f4; font-size: 13px; }
+.registration-form { display: grid; gap: 18px; margin-top: 29px; }
+.registration-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.registration-field { display: grid; min-width: 0; gap: 7px; color: #34425b; font-size: 13px; font-weight: 650; }
+.registration-label-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.registration-input { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; outline: none; color: var(--ink); background: #fff; font: inherit; font-size: 14px; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.registration-input:hover { border-color: #a9b9d4; }
+.registration-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(49, 88, 216, 0.13); }
+.registration-submit { min-height: 48px; margin-top: 2px; border: 1px solid var(--blue); border-radius: 6px; color: #fff; background: linear-gradient(115deg, #3e68e8, #263f9f 75%); box-shadow: 0 6px 15px rgba(49, 88, 216, 0.2); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: transform 160ms ease, box-shadow 160ms ease; }
+.registration-submit:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 9px 20px rgba(49, 88, 216, 0.24); }
+.registration-submit:active:not(:disabled) { transform: translateY(1px); }
+.registration-submit:disabled { cursor: wait; opacity: 0.68; box-shadow: none; }
+.registration-login { margin: 22px 0 0; color: var(--muted); text-align: center; font-size: 13px; }
+.registration-login a { color: #3158d8; font-weight: 700; text-decoration: none; }
+.registration-login a:hover { color: #0b8d90; text-decoration: underline; text-underline-offset: 3px; }
+
+@keyframes registration-arrive { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 760px) {
+  .registration-page { align-items: start; padding: 16px; }
+  .registration-shell { grid-template-columns: minmax(0, 1fr); min-height: auto; }
+  .registration-aside { min-height: 220px; padding: 24px 26px; }
+  .registration-kicker { margin-top: 28px; }
+  .registration-aside h1 { max-width: 420px; margin: 9px 0 7px; font-size: 32px; }
+  .registration-intro { max-width: 440px; font-size: 14px; }
+  .registration-trust { margin-top: 18px; font-size: 12px; }
+  .registration-content { max-width: none; padding: 34px 26px 30px; }
+}
+
+@media (max-width: 430px) {
+  .registration-page { padding: 0; }
+  .registration-shell { min-height: 100svh; border: 0; border-radius: 0; }
+  .registration-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .registration-shell { animation: none; }
+  .registration-input, .registration-submit { transition: none; }
+}

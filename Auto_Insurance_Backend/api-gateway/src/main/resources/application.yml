@@ -1,0 +1,83 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: Authentication-service
+              uri: lb://authentication-service
+              predicates:
+                - Path=/api/auth/**
+
+            - id: CustomerMicroservices
+              uri: lb://CustomerMicroservices
+              predicates:
+                - Path=/customer/**
+
+            - id: policy-service
+              uri: lb://Policy-Service
+              predicates:
+                - Path=/api/policy/**
+
+            - id: payment-service
+              uri: lb://PaymentService
+              predicates:
+                - Path=/api/payment/**
+
+            - id: claims-service
+              uri: lb://Claims-Service
+              predicates:
+                - Path=/api/claims/**
+
+            - id: document-service
+              uri: lb://Document-Service
+              predicates:
+                - Path=/api/documents/**
+
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowed-origins:
+                  - "http://localhost:3000"
+                  - "http://localhost:5173"
+                allowed-methods:
+                  - GET
+                  - POST
+                  - PUT
+                  - PATCH
+                  - DELETE
+                  - OPTIONS
+                allowed-headers: "*"
+                allow-credentials: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+info:
+    app:
+      name: ${spring.application.name}
+      description: Api GateWay microservices
+      version: 1.0.0
+
